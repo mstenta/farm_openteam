@@ -1,0 +1,4 @@
+name = OpenTEAM farmOS module
+description = farmOS OpenTEAM integration module.
+core = 7.x
+package = farmOS Contrib
