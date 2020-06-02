@@ -3,3 +3,23 @@
 /**
  * Farm OpemTEAM module.
  */
+
+/**
+ * Implements hook_farm_api_oauth2_client().
+ */
+function farm_openteam_farm_api_oauth2_client() {
+  $clients = array();
+
+  // Define the OpenTEAM Aggregator OAuth2 client.
+  $aggregator_redirect_uris = array(
+    'https://openteam.farmos.group/register-farm',
+    'https://openteam.farmos.group/authorize-farm',
+  );
+  $clients['openteam_aggregator'] = array(
+    'label' => 'OpenTEAM Aggregator',
+    'client_key' => 'openteam_aggregator',
+    'redirect_uri' => implode("\n", $aggregator_redirect_uris),
+  );
+
+  return $clients;
+}
